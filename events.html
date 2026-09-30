@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Events | CampusConnect</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            Campus<span>Connect</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="events.html">Events</a>
+            <a href="admin.html">Admin</a>
+        </div>
+
+    </nav>
+</header>
+
+
+<main>
+
+<section class="page-header">
+
+    <p class="tag">COLLEGE EVENTS</p>
+
+    <h1>Upcoming Events</h1>
+
+    <p>
+        Explore all upcoming events happening around campus.
+    </p>
+
+</section>
+
+
+<section class="events-section">
+
+    <div class="filters">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔎 Search events..."
+        >
+
+        <select id="categoryFilter">
+
+            <option value="all">
+                All Categories
+            </option>
+
+            <option value="Technical">
+                Technical
+            </option>
+
+            <option value="Cultural">
+                Cultural
+            </option>
+
+            <option value="Sports">
+                Sports
+            </option>
+
+            <option value="Workshop">
+                Workshop
+            </option>
+
+            <option value="Other">
+                Other
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div id="eventsContainer" class="events-grid"></div>
+
+</section>
+
+</main>
+
+
+<footer>
+    <p>© 2026 CampusConnect. Made for college students.</p>
+</footer>
+
+
+<script src="js/events.js"></script>
+
+</body>
+</html>

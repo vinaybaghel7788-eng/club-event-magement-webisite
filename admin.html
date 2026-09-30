@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | CampusConnect</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <nav class="navbar">
+
+        <a href="index.html"
+           class="logo">
+
+            Campus<span>Connect</span>
+
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="events.html">
+                Events
+            </a>
+
+            <a href="admin.html">
+                Admin
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+<section class="page-header">
+
+    <p class="tag">
+        ADMIN PANEL
+    </p>
+
+    <h1>
+        Event Management Dashboard
+    </h1>
+
+    <p>
+        Manage events and student registrations.
+    </p>
+
+</section>
+
+
+<section class="admin-section">
+
+
+<div class="admin-card">
+
+    <h2>
+        ➕ Add / Edit Event
+    </h2>
+
+
+    <form id="eventForm">
+
+        <input
+            type="hidden"
+            id="eventId"
+        >
+
+
+        <label>
+            Event Name
+        </label>
+
+        <input
+            type="text"
+            id="eventTitle"
+            placeholder="Event name"
+            required
+        >
+
+
+        <label>
+            Date
+        </label>
+
+        <input
+            type="date"
+            id="eventDate"
+            required
+        >
+
+
+        <label>
+            Time
+        </label>
+
+        <input
+            type="time"
+            id="eventTime"
+            required
+        >
+
+
+        <label>
+            Venue
+        </label>
+
+        <input
+            type="text"
+            id="eventVenue"
+            placeholder="Event venue"
+            required
+        >
+
+
+        <label>
+            Category
+        </label>
+
+        <select id="eventCategory">
+
+            <option>
+                Technical
+            </option>
+
+            <option>
+                Cultural
+            </option>
+
+            <option>
+                Sports
+            </option>
+
+            <option>
+                Workshop
+            </option>
+
+            <option>
+                Other
+            </option>
+
+        </select>
+
+
+        <label>
+            Description
+        </label>
+
+        <textarea
+            id="eventDescription"
+            placeholder="Event description"
+            required>
+        </textarea>
+
+
+        <button
+            type="submit"
+            class="btn primary-btn full-btn">
+
+            Save Event
+
+        </button>
+
+
+        <button
+            type="button"
+            id="cancelEdit"
+            class="btn secondary-btn full-btn hidden">
+
+            Cancel Edit
+
+        </button>
+
+    </form>
+
+</div>
+
+
+
+<div class="admin-card">
+
+    <h2>
+        📅 Manage Events
+    </h2>
+
+
+    <div id="adminEvents"></div>
+
+</div>
+
+
+
+<div class="admin-card">
+
+    <h2>
+        👥 Registered Students
+    </h2>
+
+
+    <input
+        type="text"
+        id="registrationSearch"
+        placeholder="🔎 Search registrations..."
+    >
+
+
+    <div
+        id="registrationsContainer"
+        class="table-container">
+
+    </div>
+
+</div>
+
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 CampusConnect.
+    </p>
+
+</footer>
+
+
+<script src="js/admin.js"></script>
+
+</body>
+
+</html>

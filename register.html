@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Register | CampusConnect</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <nav class="navbar">
+
+        <a href="index.html"
+           class="logo">
+
+            Campus<span>Connect</span>
+
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="events.html">
+                Events
+            </a>
+
+            <a href="admin.html">
+                Admin
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+<section class="form-section">
+
+    <div class="form-container">
+
+        <div class="section-title">
+
+            <p class="tag">
+                EVENT REGISTRATION
+            </p>
+
+            <h1>
+                Register for an Event
+            </h1>
+
+            <p>
+                Fill in your details to register.
+            </p>
+
+        </div>
+
+
+        <form id="registrationForm">
+
+            <label>
+                Event
+            </label>
+
+            <input
+                type="text"
+                id="eventName"
+                name="event"
+                readonly
+                required
+            >
+
+
+            <label>
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+                required
+            >
+
+
+            <label>
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+            >
+
+
+            <label>
+                College / Year
+            </label>
+
+            <input
+                type="text"
+                id="collegeYear"
+                name="collegeYear"
+                placeholder="Example: ABES / 2nd Year"
+                required
+            >
+
+
+            <label>
+                Phone Number
+            </label>
+
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter phone number"
+                pattern="[0-9]{10}"
+                required
+            >
+
+
+            <button
+                type="submit"
+                class="btn primary-btn full-btn">
+
+                Submit Registration
+
+            </button>
+
+        </form>
+
+
+        <div
+            id="successMessage"
+            class="success-message">
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 CampusConnect.
+    </p>
+
+</footer>
+
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const eventName =
+    params.get("event") || "College Event";
+
+document.getElementById("eventName").value =
+    eventName;
+
+
+document.getElementById("registrationForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+
+    const registration = {
+
+        event:
+            document.getElementById("eventName").value,
+
+        name:
+            document.getElementById("name").value,
+
+        email:
+            document.getElementById("email").value,
+
+        collegeYear:
+            document.getElementById("collegeYear").value,
+
+        phone:
+            document.getElementById("phone").value,
+
+        registeredAt:
+            new Date().toLocaleString()
+
+    };
+
+
+    let registrations =
+        JSON.parse(
+            localStorage.getItem("registrations")
+        ) || [];
+
+
+    registrations.push(registration);
+
+
+    localStorage.setItem(
+        "registrations",
+        JSON.stringify(registrations)
+    );
+
+
+    document.getElementById("successMessage")
+        .innerHTML =
+        "✅ Registration successful!";
+
+    document.getElementById("registrationForm")
+        .reset();
+
+    document.getElementById("eventName")
+        .value = eventName;
+
+});
+
+</script>
+
+
+</body>
+</html>
